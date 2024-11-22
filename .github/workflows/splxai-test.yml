@@ -56,7 +56,7 @@ jobs:
               REQUEST_BODY=$(cat <<-EOF
                   {
                       "targetId": $SPLXAI_TARGET_ID,
-                      "probeIds": [1], # add required Probes
+                      "probeIds": [1],
                       "name": "SplXAI Test Run"
                   }
               EOF
