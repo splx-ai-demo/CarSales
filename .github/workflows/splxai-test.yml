@@ -57,7 +57,7 @@ jobs:
                   {
                       "targetId": $SPLXAI_TARGET_ID,
                       "probeIds": [8], # add required Probes
-                      "name": "SplXAI Test Run"
+                      "name": "SplxAI Test Run"
                   }
               EOF
               )
