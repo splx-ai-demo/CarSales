@@ -27,6 +27,13 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+    SPLXAI_TARGET_ID: 15
+    # SPLXAI_API_KEY: .... # Defined as a secret variable: https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions     SPLXAI_PLATFORM_URL: "https://probe.splx.ai"
+    SPLXAI_PLATFORM_URL: "https://probe.splx.ai"
+    SPLXAI_API_URL: "https://api.probe.splx.ai"
+
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "test"
@@ -39,13 +46,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-        env:
-          SPLXAI_TARGET_ID: 15
-          # SPLXAI_API_KEY: .... # Defined as a secret variable: https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions
-          SPLXAI_PLATFORM_URL: "https://probe.splx.ai"
-          SPLXAI_API_URL: "https://api.probe.splx.ai"
-
-
       # Runs a set of commands using the runners shell
       - name: SplxAI Test
         run: |
@@ -56,7 +56,7 @@ jobs:
               REQUEST_BODY=$(cat <<-EOF
                   {
                       "targetId": $SPLXAI_TARGET_ID,
-                      "probeIds": [1],
+                      "probeIds": [1], # add required Probes
                       "name": "SplXAI Test Run"
                   }
               EOF
