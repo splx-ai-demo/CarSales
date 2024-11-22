@@ -61,6 +61,8 @@ jobs:
                   }
               EOF
               )
+
+              echo $REQUEST_BODY
           
               RESPONSE=$(curl -s --request POST \
                 --url $SPLXAI_API_URL/api/v2/test-run/trigger \
