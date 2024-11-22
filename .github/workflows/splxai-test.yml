@@ -59,7 +59,7 @@ jobs:
                   {
                       "targetId": $SPLXAI_TARGET_ID,
                       "probeIds": [8],
-                      "name": "SplxAI GitHub CI/CD Test Run"
+                      "name": "GitHub CI/CD Test Run"
                   }
               EOF
               )
