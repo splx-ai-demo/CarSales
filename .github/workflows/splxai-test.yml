@@ -67,6 +67,8 @@ jobs:
                 --header 'Content-Type: application/json' \
                 --header "X-Api-Key: $SPLXAI_API_KEY" \
                 --data "$REQUEST_BODY")
+
+              echo $RESPONSE
               
               TEST_RUN_ID=$(echo $RESPONSE | jq -r '.testRunId')
               if [ -z "$TEST_RUN_ID" ]; then
